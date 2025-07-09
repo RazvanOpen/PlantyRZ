@@ -11,17 +11,15 @@ add_action( 'wp_enqueue_scripts', 'astrabis_style' );
 					wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array('parent-style') );
 				}
 
-/**
- * Your code goes below.
- */
-?>
- <?php
+
+
+
 // Supprimer le header d’Astra
 add_action('wp', function() {
     remove_action('astra_header', 'astra_header_markup');
 });
-
 // Supprimer le footer d’Astra
 add_action('wp', function() {
     remove_action('astra_footer', 'astra_footer_markup');
 });
+
